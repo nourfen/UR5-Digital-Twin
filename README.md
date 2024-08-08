@@ -10,10 +10,10 @@ A robot digital twin that allows the mimicing and control of Universal Robots' U
 6. Within VMWare: Player - File - Open...
 7. Locate the URSim VM file and double click it
 8. Configure the VM specifications as shown
-a. Memory: 4 GB
-b. Processors: 4 vCPUs
-c. Disk: 10 GB
-d. Network: Bridged (Automatic)
+  a. Memory: 4 GB
+  b. Processors: 4 vCPUs
+  c. Disk: 10 GB
+  d. Network: Bridged (Automatic)
 9. Run VM (Virtual Machine)
 10. Install VMWare Tools
 11. Run UXTerm and type "ifconfig" to get the IP of the machine
