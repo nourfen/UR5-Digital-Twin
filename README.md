@@ -24,25 +24,45 @@ The robot is a Unified Robotics Description Format (URDF) model that was created
 
 
 # How To Replicate (Windows Device Only)
-1. Download the [Unity Application Build](https://drive.google.com/file/d/1m69EcPrcXwI4A8r6mvVohL3BDwaqM_yl/view?usp=sharing)
-2. Download [URSim 3.15](https://s3-eu-west-1.amazonaws.com/ur-support-site/172183/URSim_VIRTUAL-3.15.8.106339.rar)
-3. Download [VMWare Player 17.5](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.5.1/23298084/windows/core/VMware-player-17.5.1-23298084.exe.tar)
-4. Extract URSim Folder
-5. Install and run VMWare Player
-6. Within VMWare: Player - File - Open...
-7. Locate the URSim VM file and double click it
-8. Configure the VM specifications as shown
-   - Memory: 4 GB
-   - Processors: 4 vCPUs
-   - Disk: 10 GB
-   - Network: Bridged (Automatic)
-9. Run VM (Virtual Machine)
-10. Install VMWare Tools
-11. Run UXTerm and type "ifconfig" to get the IP of the machine
-12. Double click on UR5 Sim and make sure the robot is running
-13. Run the Unity Application
-14. Type in the IP address from earlier
-15. Press "Connect"
+1. Download and extract the [Application Build](https://drive.google.com/file/d/1m69EcPrcXwI4A8r6mvVohL3BDwaqM_yl/view?usp=sharing).
+2. Download and extract [URSim 3.15](https://s3-eu-west-1.amazonaws.com/ur-support-site/172183/URSim_VIRTUAL-3.15.8.106339.rar) VMWare Image.
+3. Download and install [VMWare Player 17.5](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.5.1/23298084/windows/core/VMware-player-17.5.1-23298084.exe.tar)
+4. Run VMWare Player
+![Alt text](Documentation/Images/VMWare_Workstation.png)
+5. Add URSIM's image (.vmx) to VMWare
+![Alt text](Documentation/Images/Open.png)
+![Alt text](Documentation/Images/URSim_vmx.png)
+6. Click on **Edit virtual machine settings**
+![Alt text](Documentation/Images/Edit_VM_Settings.png)
+7. Configure the VM specifications as shown
+- Memory: 4 GB
+![Alt text](Documentation/Images/Memory.png)
+- Processors: 4 vCPUs
+![Alt text](Documentation/Images/Processors.png)
+- Disk: 10 GB
+- Network: Bridged (Automatic)
+![Alt text](Documentation/Images/Network.png)
+8. Click on **Play virtual machine**
+![Alt text](Documentation/Images/Play.png)
+9. Install VMWare Tools (A pop-up will appear when you run it for the first time)
+![Alt text](Documentation/Images/VMW_Tools.png) 
+10. Run UXTerm 
+![Alt text](Documentation/Images/UXTerm.png) 
+11. Type **ifconfig** to get the IP of the machine
+![Alt text](Documentation/Images/ifconfig.png) 
+12. Run **UR5 Sim** and make sure the robot is running
+![Alt text](Documentation/Images/Initialise.png) 
+13. Within the UR5 Sim home page, click on **Program Robot**
+![Alt text](Documentation/Images/Program_Robot.png) 
+14. Select the **Move** tab
+![Alt text](Documentation/Images/Move.png) 
+15. Run the Unity Application
+![Alt text](Documentation/Images/Unity_Application.png) 
+16. Type in the IP address from earlier
+![Alt text](Documentation/Images/IP.png) 
+17. Press "Connect"
+18. Use the robot interface from the move tab with UR5 Sim to see the Digital Robot mimic its movement. Or, use the controls mentioned below to move the UR5 robot using the digital one.
+
 
 # Controls
 
