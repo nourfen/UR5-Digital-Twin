@@ -2190,8 +2190,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 188295478}
-  - component: {fileID: 188295477}
   - component: {fileID: 188295479}
+  - component: {fileID: 188295481}
+  - component: {fileID: 188295480}
   m_Layer: 0
   m_Name: RobotManager
   m_TagString: Untagged
@@ -2199,21 +2200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &188295477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188295476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 305ded6ea42e7124fb5693390c5ab7c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toolSpeed: 15
-  _axisAcceleration: 1
-  _functionReturnTime: 0.1
 --- !u!4 &188295478
 Transform:
   m_ObjectHideFlags: 0
@@ -2242,6 +2228,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UR5Robot: {fileID: 1399662305}
+--- !u!114 &188295480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188295476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305ded6ea42e7124fb5693390c5ab7c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &188295481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188295476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952843a05683fe747a22840d18785393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toolSpeed: 30
+  _axisAcceleration: 1
+  _functionReturnTime: 0.1
 --- !u!1 &206569245
 GameObject:
   m_ObjectHideFlags: 0
@@ -11357,10 +11370,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1939638540}
         m_TargetAssemblyTypeName: NetworkManager, Assembly-CSharp
         m_MethodName: Connect
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1535805588}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14663,7 +14676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1821ab10301ea3f4591520d77aa8dbef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MachineIpAdress: {fileID: 1535805588}
   DebugArea: {fileID: 160917936}
   UserInterfaceCanvas: {fileID: 94122998}
 --- !u!4 &1939638541
