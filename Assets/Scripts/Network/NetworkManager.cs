@@ -15,19 +15,21 @@ public class NetworkManager : MonoBehaviour
     private static TcpClient? _client;
     private NetworkStream _networkStream;
     public NetworkStream NetworkStream => _networkStream;
-    private IPAddress _ipAddress;
-    public TextMeshProUGUI MachineIpAdress;
-    public TextMeshProUGUI DebugArea;
-    public GameObject UserInterfaceCanvas;
-    public delegate void OnNetworkStreamStatusChanged(NetworkStream stream);
-    public event OnNetworkStreamStatusChanged NetworkStreamStatusChanged;
     #endregion
 
-    private Thread _robotInformation;
+    public TextMeshProUGUI DebugArea;
+    public GameObject UserInterfaceCanvas;
+
+    //Events
+    public delegate void OnNetworkStreamStatusChanged(NetworkStream stream);
+    public event OnNetworkStreamStatusChanged NetworkStreamStatusChanged;
+    //Data
     private readonly byte[] _messageBuffer = new byte[4096];
     private double[] _angles = {0, 0, 0, 0, 0, 0};
     public double[] Angles => _angles;
+    //Threading
     bool _isRunning = false;
+    private Thread _robotInformation;
 
     private void Start()
     {
@@ -133,29 +135,24 @@ public class NetworkManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// The bytes read through the stream of the TCP connection are reversed, so we need to reverse them back to their original order to get the correct value
-    /// </summary>
-    /// <param name="array"></param>
-    /// <returns>The reversed byte array that produces the correct value</returns>
     private static byte[] ReverseByteArray(byte[] array)
     {
         Array.Reverse(array);
         return array;
     }
 
-    public async void Connect()
+    public async void Connect(TextMeshProUGUI machineIpAddress)
     {
         try
         {
             //Cleaning up the IP
-            string ip = MachineIpAdress.GetParsedText();
+            string ip = machineIpAddress.GetParsedText();
             string cleanedIp = Regex.Replace(ip, @"[^0-9\.]", "");
-            _ipAddress = IPAddress.Parse(cleanedIp);
+            var ipAddress = IPAddress.Parse(cleanedIp);
 
             //Connecting
             _client = new TcpClient(AddressFamily.InterNetwork);
-            await _client.ConnectAsync(_ipAddress, PORT);
+            await _client.ConnectAsync(ipAddress, PORT);
 
             //Fetching the stream
             _networkStream = _client.GetStream();

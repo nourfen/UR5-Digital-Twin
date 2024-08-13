@@ -1,0 +1,7 @@
+public enum ControlModes 
+{
+    CONTROL_MODE_POSITION = 0,
+    CONTROL_MODE_TEACH = 1,
+    CONTROL_MODE_FORCE = 2,
+    CONTROL_MODE_TORQUE = 3
+}

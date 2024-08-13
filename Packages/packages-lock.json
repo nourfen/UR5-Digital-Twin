@@ -7,21 +7,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.microsoft.mixedreality.webrtc": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.webrtc-2.0.2.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {}
-    },
-    "com.microsoft.mixedreality.webrtc.samples": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.webrtc.samples-2.0.2.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {
-        "com.microsoft.mixedreality.webrtc": "2.0.2",
-        "com.unity.textmeshpro": "1.4.1"
-      }
-    },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 1,
@@ -62,7 +47,7 @@
     },
     "com.unity.ide.rider": {
       "version": "3.0.13",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6"
@@ -70,7 +55,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.14",
+      "version": "2.0.22",
       "depth": 0,
       "source": "registry",
       "dependencies": {
