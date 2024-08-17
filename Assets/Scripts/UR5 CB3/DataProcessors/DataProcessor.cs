@@ -19,10 +19,12 @@ public class DataProcessor : MonoBehaviour
     //Data
     private readonly byte[] _messageBuffer = new byte[4096];
     private double[] _angles = { 0, 0, 0, 0, 0, 0 };
-    private Vector3 _input = Vector3.zero;
+    private Vector3 _movementInput = Vector3.zero;
+    private Vector3 _rorationtInput = Vector3.zero;
     public double[] Angles => _angles;
 
-    public Vector3 Input  { get => _input; set => _input = value; }
+    public Vector3 MovementInput  { get => _movementInput; set => _movementInput = value; }
+    public Vector3 RotationInput  { get => _rorationtInput; set => _rorationtInput = value; }
     
     //Threading
     bool _isGetRobotInformationRunning = false;
@@ -31,7 +33,7 @@ public class DataProcessor : MonoBehaviour
     private Thread _inputHandler;
 
 
-    [SerializeField] private float _toolSpeed = 15f;
+    [SerializeField] private float _toolSpeed = 30f;
     [SerializeField] private float _axisAcceleration = 1f;
     [SerializeField] private float _functionReturnTime = 0.1f;
 
@@ -90,11 +92,11 @@ public class DataProcessor : MonoBehaviour
     {
         while (_isHandleUserInputRunning)
         {
-            if (Input != Vector3.zero && _networkStream != null && _networkStream.CanWrite)
+            if ((_movementInput != Vector3.zero || _rorationtInput != Vector3.zero) && _networkStream != null && _networkStream.CanWrite)
             {
                 try
                 {
-                    _outboundDataProcessor.CalculateAndSendTcpInstruction(_networkStream, Input * _toolSpeed, _axisAcceleration, _functionReturnTime);
+                    _outboundDataProcessor.CalculateAndSendTcpInstruction(_networkStream, _movementInput * _toolSpeed, _rorationtInput * 50, _axisAcceleration, _functionReturnTime);
                 }
                 catch (Exception ex)
                 {

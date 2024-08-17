@@ -7,12 +7,12 @@ using UnityEngine;
 public class OutboundDataProcessor
 {
     #region Robot TCP/IP Calculations
-    public void CalculateAndSendTcpInstruction(NetworkStream networkStream, Vector3 userInput, float axisAcceleration, float functionReturnTime)
+    public void CalculateAndSendTcpInstruction(NetworkStream networkStream, Vector3 userMovementInput, Vector3 userRotationInput, float axisAcceleration, float functionReturnTime)
     {
 
 
-        Vector3 userInputInUr5Space = TransformToUr5Space(userInput);
-        string pose = $"speedl([{userInputInUr5Space.x},{userInputInUr5Space.y},{userInputInUr5Space.z}, {0}, {0}, {0}], {axisAcceleration}, {functionReturnTime})";
+        Vector3 userInputInUr5Space = TransformToUr5Space(userMovementInput);
+        string pose = $"speedl([{userInputInUr5Space.x},{userInputInUr5Space.y},{userInputInUr5Space.z}, {userRotationInput.x}, {userRotationInput.y}, {userRotationInput.z}], {axisAcceleration}, {functionReturnTime})";
         string instruction = $"def myProg():\n {pose}\nend\n";
 
         SendTcpInstruction(instruction, networkStream);
