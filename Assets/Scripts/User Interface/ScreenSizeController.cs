@@ -7,7 +7,7 @@ public class ScreenSizeController : MonoBehaviour
     void Start()
     {
         // Set the minimum and maximum window sizes
-        Screen.SetResolution(1024, 768, false); // Example resolution
+        Screen.SetResolution(1920, 1080, true); // Example resolution
     }
 
     void Update()
